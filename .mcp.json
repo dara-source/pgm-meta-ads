@@ -1,0 +1,11 @@
+{
+  "mcpServers": {
+    "pgm-meta-ads": {
+      "command": "python3",
+      "args": ["./scripts/meta_ads_mcp.py"],
+      "env": {
+        "META_GRAPH_API_VERSION": "v25.0"
+      }
+    }
+  }
+}
