@@ -28,6 +28,7 @@ Copy the example file, then paste the token into the local `.env` file. The real
 ```bash
 cp .env.example .env
 python3 -m unittest discover -s tests -v
+python3 scripts/smoke_test.py
 ```
 
 ## Codex plugin configuration
