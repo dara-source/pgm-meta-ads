@@ -17,12 +17,6 @@ from datetime import date, timedelta
 from typing import Any
 
 
-SERVER_NAME = "pgm-meta-ads"
-SERVER_VERSION = "0.1.0"
-GRAPH_VERSION = os.getenv("META_GRAPH_API_VERSION", "v25.0")
-GRAPH_ROOT = f"https://graph.facebook.com/{GRAPH_VERSION}"
-
-
 def _load_local_env() -> None:
     """Load a git-ignored .env file from the plugin root when present."""
     env_path = os.path.join(os.path.dirname(os.path.dirname(__file__)), ".env")
@@ -41,6 +35,11 @@ def _load_local_env() -> None:
 
 
 _load_local_env()
+
+SERVER_NAME = "pgm-meta-ads"
+SERVER_VERSION = "0.1.0"
+GRAPH_VERSION = os.getenv("META_GRAPH_API_VERSION", "v25.0")
+GRAPH_ROOT = f"https://graph.facebook.com/{GRAPH_VERSION}"
 
 
 class MetaAPIError(RuntimeError):
