@@ -1,0 +1,24 @@
+{
+  "name": "pgm-meta-ads",
+  "version": "0.1.0",
+  "description": "Read-only Meta Ads reporting tools for Point Guard Media",
+  "author": {
+    "name": "Point Guard Media"
+  },
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "PGM Meta Ads",
+    "shortDescription": "Analyze Meta Ads with read-only reporting tools.",
+    "longDescription": "PGM Meta Ads connects Codex to Meta's Marketing API for account, campaign, creative, and demographic reporting without write access.",
+    "developerName": "Point Guard Media",
+    "category": "Data & Analytics",
+    "capabilities": ["Read-only", "Reporting", "Meta Ads"],
+    "defaultPrompt": [
+      "Show my Meta ad accounts.",
+      "Compare account performance for the last three months.",
+      "Rank qualified creatives from the last 30 days."
+    ],
+    "brandColor": "#F2C94C"
+  },
+  "mcpServers": "./.mcp.json"
+}
