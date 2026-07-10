@@ -23,6 +23,26 @@ GRAPH_VERSION = os.getenv("META_GRAPH_API_VERSION", "v25.0")
 GRAPH_ROOT = f"https://graph.facebook.com/{GRAPH_VERSION}"
 
 
+def _load_local_env() -> None:
+    """Load a git-ignored .env file from the plugin root when present."""
+    env_path = os.path.join(os.path.dirname(os.path.dirname(__file__)), ".env")
+    if not os.path.isfile(env_path):
+        return
+    with open(env_path, encoding="utf-8") as handle:
+        for raw_line in handle:
+            line = raw_line.strip()
+            if not line or line.startswith("#") or "=" not in line:
+                continue
+            key, value = line.split("=", 1)
+            key = key.strip()
+            value = value.strip().strip('"').strip("'")
+            if key and key not in os.environ:
+                os.environ[key] = value
+
+
+_load_local_env()
+
+
 class MetaAPIError(RuntimeError):
     pass
 
