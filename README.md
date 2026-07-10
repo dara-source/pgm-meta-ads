@@ -16,14 +16,17 @@ A read-only Codex MCP plugin for Meta Ads reporting. It exposes account, creativ
 3. In Meta Business Settings, create or select a system user for reporting.
 4. Assign the pilot client's ad account to that system user with read/report access.
 5. Generate a system-user token for the PGM app with `ads_read`.
-6. Store the token locally in your shell/keychain or deployment secret store as `META_ACCESS_TOKEN`.
+6. Store the token locally in `.env` or a deployment secret store as `META_ACCESS_TOKEN`.
 
 Do not paste the token into ChatGPT, Codex prompts, GitHub issues, or source files.
 
 ## Local verification
 
+Copy the example file, then paste the token into the local `.env` file. The real
+`.env` is ignored by Git and must never be committed:
+
 ```bash
-export META_ACCESS_TOKEN="..."
+cp .env.example .env
 python3 -m unittest discover -s tests -v
 ```
 
